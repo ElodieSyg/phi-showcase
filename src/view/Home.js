@@ -30,9 +30,10 @@ const Home = () => {
                     backgroundImage={"../img/design.png"}
                     title={"Design"}
                     body={"Nous créeons des designs uniques pour vos sites internet et applications mobiles. Nos webdesigners sont à votre écoute afin de conceptualiser une application à votre image. Ecoute et réactivité sont les clefs de votre besoin."}
-                    contact={"Contactez-nous"} />
+                    contact={"Contactez-nous"}
+                    alt={"Design picture"} />
                 <Card 
-                    backgroundImage={"../img/integration.jpg"}
+                    backgroundImage={"../img/integration.png"}
                     title={"Intégration"}
                     body={"Nous donnons vie à vos idées. Notre équipe de développeurs sont à jours dans les nouvelles technologies (Javascript : React.JS, Next.JS, Vue.JS, Java, Python...) est prête à collaborer avec vous."}
                     contact={"Contactez-nous"} />

@@ -41,7 +41,7 @@ const Navbar = () => {
                     <WhiteTitle text={"P H I"} />
                 </BrandContainer>
                 <DropdownContainer onClick={toogleOpen}>
-                    <Image source={"./img/menu.png"} alt={"Menu icon"} />
+                    <Image source={"../img/menu.png"} alt={"Menu icon"} width={"30px"} height={"30px"}/>
                 </DropdownContainer>
             </NavbarContainer>
             {
