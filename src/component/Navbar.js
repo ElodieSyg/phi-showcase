@@ -1,5 +1,6 @@
 import { useState } from "react";
 import styled from "styled-components";
+import { Link } from "react-router-dom";
 // COMPONENTS IMPORTATION
 import WhiteTitle from "../styles/styled-components/title/WhiteTitle";
 // STYLED COMPONENTS IMPORTATION
@@ -41,7 +42,7 @@ const Navbar = () => {
                     <WhiteTitle text={"P H I"} />
                 </BrandContainer>
                 <DropdownContainer onClick={toogleOpen}>
-                    <Image source={"../img/menu.png"} alt={"Menu icon"} width={"30px"} height={"30px"}/>
+                    <Image source={"../img/menu.png"} alt={"Menu icon"} width={"30px"} height={"30px"} />
                 </DropdownContainer>
             </NavbarContainer>
             {
@@ -50,7 +51,9 @@ const Navbar = () => {
                     <WhiteSmallText>Expertise</WhiteSmallText>
                     <WhiteSmallText>Secteurs d'activités</WhiteSmallText>
                     <WhiteSmallText>Formations</WhiteSmallText>
-                    <WhiteSmallText>Contact</WhiteSmallText>
+                    <Link to="/contact">
+                        <WhiteSmallText>Contact</WhiteSmallText>
+                    </Link>
                 </DropdownItems>
             }
         </>
