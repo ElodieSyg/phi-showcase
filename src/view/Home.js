@@ -31,7 +31,7 @@ const FormationContainer = styled.div`
 const Home = () => {
     return (
         <>
-            <ExpertiseContainer>
+            <ExpertiseContainer id="expertise">
                 <BlackBigText>Expertise</BlackBigText>
                 <ExpertiseCard
                     backgroundImage={"../img/design.png"}
@@ -46,7 +46,7 @@ const Home = () => {
                     contact={"Contactez-nous"}
                     alt={"Integration picture"} />
             </ExpertiseContainer>
-            <SecteurActiviteContainer>
+            <SecteurActiviteContainer id="activity">
                 <WhiteBigText>Secteurs d'activités</WhiteBigText>
                 <ActivityCard
                     backgroundImage={"../img/bank.png"}
@@ -65,7 +65,7 @@ const Home = () => {
                     title={"C O M M E R C E"}
                     alt={"Retail picture"} />
             </SecteurActiviteContainer>
-            <FormationContainer>
+            <FormationContainer id="formation">
                 <BlackBigText>Formations</BlackBigText>
                 Blablabla
             </FormationContainer>
