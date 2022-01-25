@@ -1,16 +1,15 @@
 import { useState, useEffect } from "react";
 import styled from "styled-components";
-import { Link } from "react-router-dom";
-import { genericHashLink } from "react-router-hash-link";
 // COMPONENTS IMPORTATION
 import WhiteTitle from "../styles/styled-components/title/WhiteTitle";
 // STYLED COMPONENTS IMPORTATION
 import Image from "./Image";
 import WhiteSmallText from "../styles/styled-components/text/WhiteSmallText";
 import WhiteButton from "../styles/styled-components/button/WhiteButton";
+import StyledLink from "../styles/styled-components/link/Link";
 
 const NavbarContainer = styled.div`
-    height: 5rem;
+    height: 6rem;
     background: black;
     display: flex;
     align-items: center;
@@ -27,10 +26,22 @@ const ItemContainer = styled.div`
 
 const Item = styled.div`
     margin: 1rem;
+    text-decoration: none;
+    display: inline-block;
+
+    ::after {
+        border-bottom: solid 3px white;  
+        transform: scaleX(0);  
+        transition: transform 250ms ease-in-out;
+    }
+
+    :hover::after {
+        width: 100%
+    }
 `;
 
 const ButtonContainer = styled.div`
-
+    margin: 1rem;
 `;
 
 const DropdownContainer = styled.div`
@@ -50,8 +61,6 @@ const Navbar = () => {
         window.addEventListener("resize", handleResize);
     }, [isResponsive]);
 
-    console.log("is responsive", isResponsive)
-
     const toogleOpen = () => {
         setOpen(!isOpen);
     };
@@ -66,55 +75,80 @@ const Navbar = () => {
 
     return (
         <>
-            <NavbarContainer>
-                <BrandContainer>
-                    <Link to="/">
-                        <WhiteTitle text={"P H I"} />
-                    </Link>
-                </BrandContainer>
-                {
-                    isResponsive
-                        ? <DropdownContainer onClick={toogleOpen}>
-                            <Image source={"../img/menu.png"} alt={"Menu icon"} width={"30px"} height={"30px"} />
-                        </DropdownContainer>
-                        : <div>
+            {
+                isResponsive
+                    ?
+                    <>
+                        <NavbarContainer>
+                            <BrandContainer>
+                                <StyledLink to="/">
+                                    <WhiteTitle text={"P H I"} />
+                                </StyledLink>
+                            </BrandContainer>
+                            <DropdownContainer onClick={toogleOpen}>
+                                <Image source={"../img/menu.png"} alt={"Menu icon"} width={"30px"} height={"30px"} />
+                            </DropdownContainer>
+                        </NavbarContainer>
+                        {
+                            isOpen &&
+                            <DropdownItems>
+                                <Item>
+                                    <StyledLink to="/#expertise">
+                                        <WhiteSmallText>Expertise</WhiteSmallText>
+                                    </StyledLink>
+                                </Item>
+                                <Item>
+                                    <StyledLink to="/#activity">
+                                        <WhiteSmallText>Sécteurs d'activités</WhiteSmallText>
+                                    </StyledLink>
+                                </Item>
+                                <Item>
+                                    <StyledLink to="/#formation">
+                                        <WhiteSmallText>Formations</WhiteSmallText>
+                                    </StyledLink>
+                                </Item>
+                                <Item>
+                                    <StyledLink to="/contact">
+                                        <WhiteSmallText>Contact</WhiteSmallText>
+                                    </StyledLink>
+                                </Item>
+                            </DropdownItems>
+                        }
+                    </>
+                    : <>
+                        <NavbarContainer>
+                            <BrandContainer>
+                                <StyledLink to="/">
+                                    <WhiteTitle text={"P H I"} />
+                                </StyledLink>
+                            </BrandContainer>
                             <ItemContainer>
                                 <Item>
-                                    <Link to="/#expertise">
+                                    <StyledLink to="/#expertise">
                                         <WhiteSmallText>Expertise</WhiteSmallText>
-                                    </Link>
+                                    </StyledLink>
                                 </Item>
                                 <Item>
-                                    <Link to="/#activity">
+                                    <StyledLink to="/#activity">
                                         <WhiteSmallText>Sécteurs d'activités</WhiteSmallText>
-                                    </Link>
+                                    </StyledLink>
                                 </Item>
                                 <Item>
-                                    <Link to="/#formation">
+                                    <StyledLink to="/#formation">
                                         <WhiteSmallText>Formations</WhiteSmallText>
-                                    </Link>
+                                    </StyledLink>
                                 </Item>
                             </ItemContainer>
                             <ButtonContainer>
-                                <WhiteButton>
-                                    Discuter d'un projet ?
-                                </WhiteButton>
+                                <StyledLink to="/contact">
+                                    <WhiteButton>
+                                        Discuter d'un projet ?
+                                    </WhiteButton>
+                                </StyledLink>
                             </ButtonContainer>
-
-                        </div>
-                }
-                {
-                    isOpen &&
-                    <DropdownItems>
-                        <WhiteSmallText>Expertise</WhiteSmallText>
-                        <WhiteSmallText>Secteurs d'activités</WhiteSmallText>
-                        <WhiteSmallText>Formations</WhiteSmallText>
-                        <Link to="/contact">
-                            <WhiteSmallText>Contact</WhiteSmallText>
-                        </Link>
-                    </DropdownItems>
-                }
-            </NavbarContainer>
+                        </NavbarContainer>
+                    </>
+            }
         </>
     );
 };
