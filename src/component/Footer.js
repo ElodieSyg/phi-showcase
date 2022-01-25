@@ -7,6 +7,16 @@ import WhiteMediumText from "../styles/styled-components/text/WhiteMediumText";
 
 const FooterContainer = styled.div`
     background: black;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+
+    @media only screen and (min-width: 768px) {
+        display: flex;
+        justify-content: space-between;
+        align-items: end;
+    }
 `;
 
 const GeneralInfo = styled.div`
@@ -17,6 +27,15 @@ const SocialNetwork = styled.div`
     display: flex;
     padding: 1rem;
 `;
+
+const Item = styled.div`
+    padding: 0rem 1rem 0rem 0rem;
+
+    @media only screen and (min-width: 768px) {
+        padding: 0rem 1rem 1rem 0rem;
+    }
+`;
+
 const Footer = () => {
     return (
         <FooterContainer>
@@ -26,8 +45,12 @@ const Footer = () => {
                 <WhiteSmallText>06 00 00 00 00</WhiteSmallText>
             </GeneralInfo>
             <SocialNetwork>
-                <Image source={"../img/instagram.png"} alt={"Instagram logo"} />
-                <Image source={"../img/linkedin.png"} alt={"Linkedin logo"} />
+                <Item>
+                    <Image source={"../img/instagram.png"} alt={"Instagram logo"} />
+                </Item>
+                <Item>
+                    <Image source={"../img/linkedin.png"} alt={"Linkedin logo"} />
+                </Item>
             </SocialNetwork>
         </FooterContainer>
     );
