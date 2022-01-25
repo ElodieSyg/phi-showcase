@@ -6,9 +6,6 @@ import BlackMediumText from "../styles/styled-components/text/BlackMediumText";
 import BottomLineInput from "../styles/styled-components/input/BottomLineInput";
 import BlackButton from "../styles/styled-components/button/BlackButton";
 
-const ContactContainer = styled.div`
-
-`;
 
 const TextContainer = styled.div`
     margin: 2rem;
@@ -42,7 +39,7 @@ const Contact = () => {
     const [message, setMessage] = useState();
 
     return (
-        <ContactContainer>
+        <>
             <TextContainer>
                 <BlackBigText>Un nouveau projet ?</BlackBigText>
                 <BlackMediumText>Contactez-nous !</BlackMediumText>
@@ -82,7 +79,7 @@ const Contact = () => {
                     <BlackButton>Envoyer</BlackButton>
                 </ButtonContainer>
             </FormContainer>
-        </ContactContainer>
+        </>
     );
 };
 
