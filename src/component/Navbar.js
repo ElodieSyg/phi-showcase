@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import styled from "styled-components";
 // COMPONENTS IMPORTATION
 import WhiteTitle from "../styles/styled-components/title/WhiteTitle";
@@ -6,7 +6,7 @@ import WhiteTitle from "../styles/styled-components/title/WhiteTitle";
 import Image from "./Image";
 import WhiteSmallText from "../styles/styled-components/text/WhiteSmallText";
 import WhiteButton from "../styles/styled-components/button/WhiteButton";
-import StyledLink from "../styles/styled-components/link/Link";
+import StyledLink from "../styles/styled-components/link/StyledLink";
 
 const NavbarContainer = styled.div`
     height: 6rem;
@@ -25,18 +25,11 @@ const ItemContainer = styled.div`
 `;
 
 const Item = styled.div`
-    margin: 1rem;
     text-decoration: none;
     display: inline-block;
 
-    ::after {
-        border-bottom: solid 3px white;  
-        transform: scaleX(0);  
-        transition: transform 250ms ease-in-out;
-    }
-
-    :hover::after {
-        width: 100%
+    @media only screen and (min-width: 768px) {
+        margin: 1rem;
     }
 `;
 
@@ -51,103 +44,99 @@ const DropdownContainer = styled.div`
 const DropdownItems = styled.div`
     background: black;
     padding: 0.5rem;
+    display: flex;
+    flex-direction: column;
 `;
 
-const Navbar = () => {
+const Navbar = (props) => {
     const [isOpen, setOpen] = useState(false);
-    const [isResponsive, setResponsive] = useState(false);
-
-    useEffect(() => {
-        window.addEventListener("resize", handleResize);
-    }, [isResponsive]);
 
     const toogleOpen = () => {
         setOpen(!isOpen);
     };
 
-    const handleResize = () => {
-        if (window.innerWidth < 720) {
-            setResponsive(true);
-        } else {
-            setResponsive(false);
-        };
+    const DesktopBar = () => {
+        return (
+            <NavbarContainer>
+                <BrandContainer>
+                    <StyledLink to="/">
+                        <WhiteTitle text={"P H I"} />
+                    </StyledLink>
+                </BrandContainer>
+                <ItemContainer>
+                    <Item>
+                        <StyledLink to="/#expertise">
+                            <WhiteSmallText>Expertise</WhiteSmallText>
+                        </StyledLink>
+                    </Item>
+                    <Item>
+                        <StyledLink to="/#activity">
+                            <WhiteSmallText>Sécteurs d'activités</WhiteSmallText>
+                        </StyledLink>
+                    </Item>
+                    <Item>
+                        <StyledLink to="/#formation">
+                            <WhiteSmallText>Formations</WhiteSmallText>
+                        </StyledLink>
+                    </Item>
+                </ItemContainer>
+                <ButtonContainer>
+                    <StyledLink to="/contact">
+                        <WhiteButton>
+                            Discuter d'un projet ?
+                        </WhiteButton>
+                    </StyledLink>
+                </ButtonContainer>
+            </NavbarContainer>
+        );
+    };
+
+    const MobileBar = () => {
+        return (
+            <>
+                <NavbarContainer>
+                    <BrandContainer>
+                        <StyledLink to="/">
+                            <WhiteTitle text={"P H I"} />
+                        </StyledLink>
+                    </BrandContainer>
+                    <DropdownContainer onClick={toogleOpen}>
+                        <Image source={"../img/menu.png"} alt={"Menu icon"} width={"30px"} height={"30px"} />
+                    </DropdownContainer>
+                </NavbarContainer>
+                {
+                    isOpen &&
+                    <DropdownItems>
+                        <Item>
+                            <StyledLink to="/#expertise">
+                                <WhiteSmallText>Expertise</WhiteSmallText>
+                            </StyledLink>
+                        </Item>
+                        <Item>
+                            <StyledLink to="/#activity">
+                                <WhiteSmallText>Sécteurs d'activités</WhiteSmallText>
+                            </StyledLink>
+                        </Item>
+                        <Item>
+                            <StyledLink to="/#formation">
+                                <WhiteSmallText>Formations</WhiteSmallText>
+                            </StyledLink>
+                        </Item>
+                        <Item>
+                            <StyledLink to="/contact">
+                                <WhiteSmallText>Contact</WhiteSmallText>
+                            </StyledLink>
+                        </Item>
+                    </DropdownItems>
+                }
+            </>
+        )
     };
 
     return (
         <>
             {
-                isResponsive
-                    ?
-                    <>
-                        <NavbarContainer>
-                            <BrandContainer>
-                                <StyledLink to="/">
-                                    <WhiteTitle text={"P H I"} />
-                                </StyledLink>
-                            </BrandContainer>
-                            <DropdownContainer onClick={toogleOpen}>
-                                <Image source={"../img/menu.png"} alt={"Menu icon"} width={"30px"} height={"30px"} />
-                            </DropdownContainer>
-                        </NavbarContainer>
-                        {
-                            isOpen &&
-                            <DropdownItems>
-                                <Item>
-                                    <StyledLink to="/#expertise">
-                                        <WhiteSmallText>Expertise</WhiteSmallText>
-                                    </StyledLink>
-                                </Item>
-                                <Item>
-                                    <StyledLink to="/#activity">
-                                        <WhiteSmallText>Sécteurs d'activités</WhiteSmallText>
-                                    </StyledLink>
-                                </Item>
-                                <Item>
-                                    <StyledLink to="/#formation">
-                                        <WhiteSmallText>Formations</WhiteSmallText>
-                                    </StyledLink>
-                                </Item>
-                                <Item>
-                                    <StyledLink to="/contact">
-                                        <WhiteSmallText>Contact</WhiteSmallText>
-                                    </StyledLink>
-                                </Item>
-                            </DropdownItems>
-                        }
-                    </>
-                    : <>
-                        <NavbarContainer>
-                            <BrandContainer>
-                                <StyledLink to="/">
-                                    <WhiteTitle text={"P H I"} />
-                                </StyledLink>
-                            </BrandContainer>
-                            <ItemContainer>
-                                <Item>
-                                    <StyledLink to="/#expertise">
-                                        <WhiteSmallText>Expertise</WhiteSmallText>
-                                    </StyledLink>
-                                </Item>
-                                <Item>
-                                    <StyledLink to="/#activity">
-                                        <WhiteSmallText>Sécteurs d'activités</WhiteSmallText>
-                                    </StyledLink>
-                                </Item>
-                                <Item>
-                                    <StyledLink to="/#formation">
-                                        <WhiteSmallText>Formations</WhiteSmallText>
-                                    </StyledLink>
-                                </Item>
-                            </ItemContainer>
-                            <ButtonContainer>
-                                <StyledLink to="/contact">
-                                    <WhiteButton>
-                                        Discuter d'un projet ?
-                                    </WhiteButton>
-                                </StyledLink>
-                            </ButtonContainer>
-                        </NavbarContainer>
-                    </>
+                props.isResponsive ? <MobileBar /> : <DesktopBar />
             }
         </>
     );
