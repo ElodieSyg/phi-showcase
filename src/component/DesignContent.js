@@ -18,7 +18,7 @@ const InformationsContainer = styled.div`
     };
 
     @media only screen and (min-width: 1440px) {
-        padding: 0rem 8rem 0rem 8rem;
+        padding: 0rem 0rem 0rem 5rem;
     };
 `;
 

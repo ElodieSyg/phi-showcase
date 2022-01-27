@@ -38,8 +38,12 @@ const Item = styled.div`
     display: inline-block;
 
     @media only screen and (min-width: 768px) {
-        margin: 1rem;
+        margin: 0.5rem;
     };
+
+    @media only screen and (min-width: 1024px) {
+        margin: 1rem;
+    }
 `;
 
 const ButtonContainer = styled.div`
