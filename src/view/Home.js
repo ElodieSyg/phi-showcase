@@ -2,11 +2,11 @@ import styled from "styled-components";
 // COMPONENTS IMPORTATION
 import ExpertiseCard from "../component/ExpertiseCard";
 import ActivityCard from "../component/ActivityCard";
+import DesignContent from "../component/DesignContent";
+import IntegrationContent from "../component/IntegrationContent";
 // STYLED COMPONENTS IMPORTATION
 import BlackBigText from "../styles/styled-components/text/BlackBigText";
 import WhiteBigText from "../styles/styled-components/text/WhiteBigText";
-import DesignContent from "../component/DesignContent";
-import IntegrationContent from "../component/IntegrationContent";
 
 const ExpertiseContainer = styled.div`
     margin: 0.5rem;
@@ -21,7 +21,7 @@ const ExpertiseContainer = styled.div`
 `;
 
 const TitleContainer = styled.div`
-    margin-left: 2rem;
+    padding-left: 2rem;
 
     @media only screen and (min-width: 1024px) {
         margin-left: 4rem;
@@ -34,6 +34,16 @@ const SecteurActiviteContainer = styled.div`
     flex-direction: column;
     align-items: center;
     background: black;
+
+    @media only screen and (min-width: 768px) {
+        align-items: unset;
+    };
+`;
+
+const ActivitiesContainer = styled.div`
+    display: flex;
+    justify-content: center;
+    align-items: center;
 `;
 
 const FormationContainer = styled.div`
@@ -64,6 +74,33 @@ const Home = (props) => {
                         src={"../img/integration-desktop.jpeg"}
                         alt={"Integration picture"} />
                 </ExpertiseContainer>
+                <SecteurActiviteContainer>
+                    <TitleContainer>
+                        <WhiteBigText>Secteurs d'activités</WhiteBigText>
+                    </TitleContainer>
+                    <ActivitiesContainer>
+                        <ActivityCard
+                            backgroundImage={"../img/bank.png"}
+                            title={"B A N Q U E"}
+                            alt={"Banque picture"}
+                            isResponsive={props.isResponsive} />
+                        <ActivityCard
+                            backgroundImage={"../img/road.png"}
+                            title={"T R A N S P O R T"}
+                            alt={"Road picture"}
+                            isResponsive={props.isResponsive} />
+                        <ActivityCard
+                            backgroundImage={"../img/industrie.png"}
+                            title={"I N D U S T R I E"}
+                            alt={"Industrie picture"}
+                            isResponsive={props.isResponsive} />
+                        <ActivityCard
+                            backgroundImage={"../img/retail.png"}
+                            title={"C O M M E R C E"}
+                            alt={"Retail picture"}
+                            isResponsive={props.isResponsive} />
+                    </ActivitiesContainer>
+                </SecteurActiviteContainer>
             </>
         );
     };
@@ -90,19 +127,23 @@ const Home = (props) => {
                     <ActivityCard
                         backgroundImage={"../img/bank.png"}
                         title={"B A N Q U E"}
-                        alt={"Banque picture"} />
+                        alt={"Banque picture"}
+                        isResponsive={props.isResponsive} />
                     <ActivityCard
                         backgroundImage={"../img/road.png"}
                         title={"T R A N S P O R T"}
-                        alt={"Road picture"} />
+                        alt={"Road picture"}
+                        isResponsive={props.isResponsive} />
                     <ActivityCard
                         backgroundImage={"../img/industrie.png"}
                         title={"I N D U S T R I E"}
-                        alt={"Industrie picture"} />
+                        alt={"Industrie picture"}
+                        isResponsive={props.isResponsive} />
                     <ActivityCard
                         backgroundImage={"../img/retail.png"}
                         title={"C O M M E R C E"}
-                        alt={"Retail picture"} />
+                        alt={"Retail picture"}
+                        isResponsive={props.isResponsive} />
                 </SecteurActiviteContainer>
                 <FormationContainer id="formation">
                     <BlackBigText>Formations</BlackBigText>
