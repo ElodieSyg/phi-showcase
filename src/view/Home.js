@@ -5,7 +5,8 @@ import ActivityCard from "../component/ActivityCard";
 // STYLED COMPONENTS IMPORTATION
 import BlackBigText from "../styles/styled-components/text/BlackBigText";
 import WhiteBigText from "../styles/styled-components/text/WhiteBigText";
-import ExpertiseContent from "../component/ExpertiseContent";
+import DesignContent from "../component/DesignContent";
+import IntegrationContent from "../component/IntegrationContent";
 
 const ExpertiseContainer = styled.div`
     margin: 0.5rem;
@@ -41,13 +42,19 @@ const Home = (props) => {
             <>
                 <ExpertiseContainer>
                     <BlackBigText>Expertise</BlackBigText>
-                    <ExpertiseContent
+                    <DesignContent
                         title={"Design"}
                         body={"Nous créeons des designs uniques pour vos sites internet et applications mobiles. Nos webdesigners sont à votre écoute afin de conceptualiser une application à votre image. Ecoute et réactivité sont les clefs de votre besoin."}
                         contact={"Contactez-nous"}
-                        src={""}
+                        src={"../img/design-desktop.jpeg"}
                         alt={"Design picture"}
                     />
+                    <IntegrationContent
+                        title={"Intégration"}
+                        body={"Nous donnons vie à vos idées. Notre équipe de développeurs sont à jours dans les nouvelles technologies (Javascript : React.JS, Next.JS, Vue.JS, Java, Python...) est prête à collaborer avec vous."}
+                        contact={"Contactez-nous"}
+                        src={"../img/integration-desktop.jpeg"}
+                        alt={"Integration picture"} />
                 </ExpertiseContainer>
             </>
         );

@@ -4,29 +4,33 @@ const Container = styled.div`
     display: flex;
     justify-content: center;
     align-items: center;
-    background: red;
+    height: 25rem;
 `;
 
 const InformationsContainer = styled.div`
     display: flex;
     flex-direction: column;
     flex: 1;
-    padding: 2rem;
+    padding: 0rem 2rem 0rem 2rem;
+
+    @media only screen and (min-width: 1024px) {
+        padding: 0rem 5rem 0rem 5rem;
+    };
+
+    @media only screen and (min-width: 1440px) {
+        padding: 0rem 8rem 0rem 8rem;
+    };
 `;
 
-const Title = styled.h3`
-`;
-
-const Body = styled.p`
-
-`;
-
-const Contact = styled.p`
+const Contact = styled.a`
     text-decoration: underline;
+    color: black;
 `;
 
 const ImageContainer = styled.div`
     flex: 1;
+    display: flex;
+    justify-content: center;
     padding: 2rem;
 `;
 
@@ -34,12 +38,12 @@ const ExpertiseContent = (props) => {
     return (
         <Container>
             <InformationsContainer>
-                <Title>{props.title}</Title>
+                <h3>{props.title}</h3>
                 <p>{props.body}</p>
-                <Contact>{props.contact}</Contact>
+                <Contact href="/contact">{props.contact}</Contact>
             </InformationsContainer>
             <ImageContainer>
-                <img src={props.src} alt={props.alt} />
+                <img src={props.src} alt={props.alt} width={250} />
             </ImageContainer>
         </Container>
     );

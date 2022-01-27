@@ -34,7 +34,7 @@ const App = () => {
           exact path="/contact"
           component={(props) => <Contact {...props} isResponsive={isResponsive} />} />
       </Switch>
-      <Footer />
+      {/* <Footer /> */}
     </Router>
   );
 };
