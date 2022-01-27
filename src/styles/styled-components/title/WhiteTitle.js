@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-const WhiteText = styled.p`
+const WhiteText = styled.h3`
     color: white;
     font-weight: bold;
 `;
