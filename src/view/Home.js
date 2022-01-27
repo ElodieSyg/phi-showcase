@@ -16,9 +16,16 @@ const ExpertiseContainer = styled.div`
     align-items: center;
 
     @media only screen and (min-width: 768px) {
-        margin: 2rem;
         align-items: unset;
-    }
+    };
+`;
+
+const TitleContainer = styled.div`
+    margin-left: 2rem;
+
+    @media only screen and (min-width: 1024px) {
+        margin-left: 4rem;
+    };
 `;
 
 const SecteurActiviteContainer = styled.div`
@@ -35,13 +42,14 @@ const FormationContainer = styled.div`
     align-items: center;
 `;
 
-
 const Home = (props) => {
     const DesktopComponent = () => {
         return (
             <>
                 <ExpertiseContainer>
-                    <BlackBigText>Expertise</BlackBigText>
+                    <TitleContainer>
+                        <BlackBigText>Expertise</BlackBigText>
+                    </TitleContainer>
                     <DesignContent
                         title={"Design"}
                         body={"Nous créeons des designs uniques pour vos sites internet et applications mobiles. Nos webdesigners sont à votre écoute afin de conceptualiser une application à votre image. Ecoute et réactivité sont les clefs de votre besoin."}
@@ -105,9 +113,7 @@ const Home = (props) => {
 
     return (
         <>
-            {
-                props.isResponsive ? <MobileComponent /> : <DesktopComponent />
-            }
+            {props.isResponsive ? <MobileComponent /> : <DesktopComponent />}
         </>
     );
 };
