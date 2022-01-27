@@ -14,6 +14,15 @@ const NavbarContainer = styled.div`
     display: flex;
     align-items: center;
     justify-content: space-between;
+    padding: 0rem 1rem 0rem 1rem;
+
+    @media only screen and (min-width: 768px) {
+        padding: 0rem 2rem 0rem 2rem;
+    };
+
+    @media only screen and (min-width: 1024px) {
+        padding: 0rem 4rem 0rem 4rem;
+    };
 `;
 
 const BrandContainer = styled.div`
@@ -30,7 +39,7 @@ const Item = styled.div`
 
     @media only screen and (min-width: 768px) {
         margin: 1rem;
-    }
+    };
 `;
 
 const ButtonContainer = styled.div`
