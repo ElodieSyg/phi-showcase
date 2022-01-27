@@ -50,13 +50,17 @@ const FormationContainer = styled.div`
     display: flex;
     flex-direction: column;
     align-items: center;
+
+    @media only screen and (min-width: 768px) {
+        align-items: unset;
+    };
 `;
 
 const Home = (props) => {
     const DesktopComponent = () => {
         return (
             <>
-                <ExpertiseContainer>
+                <ExpertiseContainer id="expertise">
                     <TitleContainer>
                         <BlackBigText>Expertise</BlackBigText>
                     </TitleContainer>
@@ -74,7 +78,7 @@ const Home = (props) => {
                         src={"../img/integration-desktop.jpeg"}
                         alt={"Integration picture"} />
                 </ExpertiseContainer>
-                <SecteurActiviteContainer>
+                <SecteurActiviteContainer id="activity">
                     <TitleContainer>
                         <WhiteBigText>Secteurs d'activités</WhiteBigText>
                     </TitleContainer>
@@ -101,6 +105,10 @@ const Home = (props) => {
                             isResponsive={props.isResponsive} />
                     </ActivitiesContainer>
                 </SecteurActiviteContainer>
+                <FormationContainer id="formation">
+                    <BlackBigText>Formations</BlackBigText>
+                    Blablabla
+                </FormationContainer>
             </>
         );
     };

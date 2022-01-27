@@ -7,10 +7,6 @@ import WhiteMediumText from "../styles/styled-components/text/WhiteMediumText";
 
 const FooterContainer = styled.div`
     background: black;
-    position: fixed;
-    left: 0;
-    bottom: 0;
-    width: 100%;
 
     @media only screen and (min-width: 768px) {
         display: flex;
