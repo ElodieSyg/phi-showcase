@@ -1,5 +1,5 @@
-import React, { useState, useEffect } from "react";
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import React, { useState, useEffect, useContext } from "react";
+import { BrowserRouter, Switch, Route } from "react-router-dom";
 // VIEWS IMPORTATION
 import Home from "./view/Home";
 import Contact from "./view/Contact";
@@ -12,7 +12,6 @@ const App = () => {
 
   useEffect(() => {
     window.addEventListener("resize", handleResize);
-    console.log("is responsive in entry point", isResponsive)
   }, []);
 
   const handleResize = () => {
@@ -24,7 +23,7 @@ const App = () => {
   };
 
   return (
-    <Router>
+    <BrowserRouter>
       <Navbar isResponsive={isResponsive} />
       <Switch>
         <Route
@@ -35,7 +34,7 @@ const App = () => {
           component={(props) => <Contact {...props} isResponsive={isResponsive} />} />
       </Switch>
       <Footer />
-    </Router>
+    </BrowserRouter>
   );
 };
 

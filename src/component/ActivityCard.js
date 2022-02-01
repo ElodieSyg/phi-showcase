@@ -31,20 +31,30 @@ const ActivityCard = (props) => {
         justify-content: center;
         align-items: center;
 
-        @media only screen and (min-width: 768px) {
+        @media only screen and (min-width: 720px) {
             height: 7rem;
             width: 7rem;
         };
 
-        @media only screen and (min-width: 1024px) {
-            height: 9.5rem;
-            width: 9.5rem;
+        @media only screen and (min-width: 768px) {
+            height: 8rem;
+            width: 8rem;
         };
 
-        @media only screen and (min-width: 1024px) {
-            height: 12rem;
-            width: 12rem;
-        };    
+        @media only screen and (min-width: 890px) {
+            height: 9rem;
+            width: 9rem;
+        };
+
+        @media only screen and (min-width: 1000px) {
+            height: 10rem;
+            width: 10rem;
+        }
+
+        @media only screen and (max-width: 1024px) {
+            height: 11rem;
+            width: 11rem;
+        };
     `;
 
     return (
