@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 const Text = styled.h3`
     color: white;
-    font-style: italic
+    font-style: italic;
 `;
 
 const WhiteMediumText = (props) => {
