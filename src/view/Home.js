@@ -11,7 +11,7 @@ import WhiteBigText from "../styles/styled-components/text/WhiteBigText";
 
 const ExpertiseContainer = styled.div`
     margin: 0.5rem;
-    padding: 0.5rem;
+    padding: 3rem 1rem 4rem 1rem;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -30,7 +30,7 @@ const TitleContainer = styled.div`
 `;
 
 const SecteurActiviteContainer = styled.div`
-    padding: 1rem;
+    padding: 3rem 1rem 6rem 1rem;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -48,6 +48,8 @@ const ActivitiesContainer = styled.div`
 `;
 
 const FormationContainer = styled.div`
+    margin: 0.5rem;
+    padding: 3rem 1rem 5rem 1rem;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -163,10 +165,14 @@ const Home = (props) => {
                         isResponsive={props.isResponsive} />
                 </SecteurActiviteContainer>
                 <FormationContainer id="formation">
-                    <TitleContainer>
-                        <BlackBigText>Formations</BlackBigText>
-                    </TitleContainer>
-                    <FormationCard />
+                    <BlackBigText>Formations</BlackBigText>
+                    <FormationCard
+                        source={"../img/formation.png"}
+                        alt={"Formation picture"}
+                        title={"Entreprises et écoles"}
+                        body={"Nous proposons des formations sur mesure pour les entreprises et écoles. N'hésitez pas à nous contacter pour plus d'informations."}
+                        contact={"Contactez-nous"}
+                    />
                 </FormationContainer></>
         );
     };

@@ -5,7 +5,11 @@ const FormationContainer = styled.div`
     justify-content: center;
     align-items: center;
     margin: 3rem;
-    `;
+
+    @media (min-width: 0px) and (max-width: 768px) {
+        display: unset;
+    };
+`;
 
 const InformationsContent = styled.div`
     flex: 2;
@@ -16,6 +20,10 @@ const InformationsContent = styled.div`
 
 const ImageContainer = styled.div`
     flex: 1;
+
+    @media (min-width: 0px) and (max-width: 768px) {
+        text-align: center;
+    };
 `;
 
 const Contact = styled.a`
