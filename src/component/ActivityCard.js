@@ -51,7 +51,7 @@ const ActivityCard = (props) => {
             width: 10rem;
         }
 
-        @media only screen and (max-width: 1024px) {
+        @media only screen and (min-width: 1024px) {
             height: 11rem;
             width: 11rem;
         };
