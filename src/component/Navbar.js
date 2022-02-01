@@ -27,6 +27,10 @@ const NavbarContainer = styled.div`
 
 const BrandContainer = styled.div`
     margin-left: 1rem;
+
+    @media (min-width: 720px) and (max-width: 768px) {
+        margin-left: 1rem;
+    };
 `;
 
 const ItemContainer = styled.div`
@@ -37,13 +41,17 @@ const Item = styled.div`
     text-decoration: none;
     display: inline-block;
 
+    @media (min-width: 720px) and (max-width: 768px) {
+        margin-left: 1rem;
+    };
+
     @media only screen and (min-width: 768px) {
         margin: 0.5rem;
     };
 
     @media only screen and (min-width: 1024px) {
         margin: 1rem;
-    }
+    };
 `;
 
 const ButtonContainer = styled.div`
