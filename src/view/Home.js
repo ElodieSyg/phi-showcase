@@ -4,6 +4,7 @@ import ExpertiseCard from "../component/ExpertiseCard";
 import ActivityCard from "../component/ActivityCard";
 import DesignContent from "../component/DesignContent";
 import IntegrationContent from "../component/IntegrationContent";
+import FormationCard from "../component/FormationCard";
 // STYLED COMPONENTS IMPORTATION
 import BlackBigText from "../styles/styled-components/text/BlackBigText";
 import WhiteBigText from "../styles/styled-components/text/WhiteBigText";
@@ -106,8 +107,16 @@ const Home = (props) => {
                     </ActivitiesContainer>
                 </SecteurActiviteContainer>
                 <FormationContainer id="formation">
-                    <BlackBigText>Formations</BlackBigText>
-                    Blablabla
+                    <TitleContainer>
+                        <BlackBigText>Formations</BlackBigText>
+                    </TitleContainer>
+                    <FormationCard
+                        source={"../img/formation.png"}
+                        alt={"Formation picture"}
+                        title={"Entreprises et écoles"}
+                        body={"Nous proposons des formations sur mesure pour les entreprises et écoles. N'hésitez pas à nous contacter pour plus d'informations."}
+                        contact={"Contactez-nous"}
+                    />
                 </FormationContainer>
             </>
         );
@@ -154,8 +163,10 @@ const Home = (props) => {
                         isResponsive={props.isResponsive} />
                 </SecteurActiviteContainer>
                 <FormationContainer id="formation">
-                    <BlackBigText>Formations</BlackBigText>
-                    Blablabla
+                    <TitleContainer>
+                        <BlackBigText>Formations</BlackBigText>
+                    </TitleContainer>
+                    <FormationCard />
                 </FormationContainer></>
         );
     };
